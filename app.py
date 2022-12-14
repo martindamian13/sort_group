@@ -27,7 +27,7 @@ def recibir_json():
 @app.route('/data')
 def index():
     response = recibir_json()
-    return jsonify(response) #Devuelve la lista de la base de datos en formato json
+    return jsonify(response) #Retorna el diccionario en una lista de la base de datos en formato json
 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=7000, debug=True)
