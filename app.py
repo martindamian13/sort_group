@@ -20,14 +20,15 @@ def recibir_json():
         resultado = consulta.fetchall() # Obtiene los resulados (diccionario) de la consulta en una lista
         return resultado #Retorna la lista
 
-        
 
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/data')
-def index():
+def api():
     response = recibir_json()
     return jsonify(response) #Retorna el diccionario en una lista de la base de datos en formato json
 
 if __name__=='__main__':
-    app.run(host='0.0.0.0', port=7000, debug=True)
+    app.run(host='0.0.0.0', port=1000, debug=True)
